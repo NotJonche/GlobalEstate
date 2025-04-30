@@ -5,7 +5,12 @@ const JWT = require("jsonwebtoken");
 require("dotenv").config();
 
 const createToken = (user_id) => {
-  return JWT.sign({ user_id }, process.env.SECRET, { expiresIn: "3d" });
+  try {
+    return JWT.sign({ user_id }, process.env.SECRET, { expiresIn: "3d" });
+  } catch (err) {
+    console.error("Error generating token:", err);
+    throw new Error("Failed to generate token");
+  }
 };
 
 const SignUp = (req, res) => {
@@ -80,7 +85,7 @@ const Login = (req, res) => {
   const email = req.body.email;
 
   if (!email || !password) {
-    res.status(400).json({
+    return res.status(400).json({
       status: 0,
       mssg: "Please make sure to fill out all the fields!",
     });
@@ -92,20 +97,20 @@ const Login = (req, res) => {
     })
       .then((user) => {
         if (!user) {
-          res.status(404).json({
+          return res.status(404).json({
             status: 0,
             data: "User not found",
           });
         } else {
           const isPasswordValid = bcrypt.compareSync(password, user.password);
           if (isPasswordValid === false) {
-            res.status(401).json({
+            return res.status(401).json({
               status: 0,
               data: "The password is incorrect!",
             });
           } else {
             const token = createToken(user.user_id);
-            res.status(200).json({
+            return res.status(200).json({
               status: 1,
               data: user,
               token,
@@ -114,9 +119,9 @@ const Login = (req, res) => {
         }
       })
       .catch((err) => {
-        res.status(500).json({
+        return res.status(500).json({
           status: 0,
-          data: err,
+          data: "An internal server error occurred.",
         });
       });
   }

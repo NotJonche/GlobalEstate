@@ -17,6 +17,7 @@ const { User, House, Property, Flat, Transaction } = models;
 const { SignUp, Login } = require("./controllers/UserController");
 
 app.post("/", SignUp);
+app.post("/api/login", Login);
 
 databaz.sync();
 app.listen(3000, () => {
