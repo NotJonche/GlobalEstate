@@ -24,3 +24,4 @@ app.listen(3000, () => {
   console.log("Server is running on port" + 3000);
   connectToDatabase();
 });
+User.findAll().then((users) => console.log("Users:", users));

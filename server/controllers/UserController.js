@@ -54,6 +54,7 @@ const SignUp = (req, res) => {
                 phone,
               })
                 .then((newUser) => {
+                  console.log("✅ New user saved to DB:", newUser.toJSON()); // <--- add this
                   const token = createToken(newUser.user_id);
                   res.status(200).json({
                     status: 1,
@@ -62,6 +63,7 @@ const SignUp = (req, res) => {
                   });
                 })
                 .catch((err) => {
+                  console.error("❌ Error saving user to DB:", err); // <--- add this
                   res.status(500).json({
                     status: 0,
                     data: err,
