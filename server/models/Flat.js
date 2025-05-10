@@ -11,6 +11,7 @@ Flat.init(
     floor_number: DataTypes.INTEGER,
     total_floors: DataTypes.INTEGER,
     has_elevator: DataTypes.BOOLEAN,
+    has_garage: DataTypes.BOOLEAN,
   },
   {
     sequelize: databaz,

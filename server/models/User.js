@@ -26,9 +26,14 @@ User.init(
       type: DataTypes.STRING(30),
       allowNull: false,
     },
-    role: {
-      type: DataTypes.ENUM("user", "agent", "admin"),
-      defaultValue: "user",
+    role_id: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 1,
+      references: {
+        model: "roles",
+        key: "id",
+      },
     },
   },
   {

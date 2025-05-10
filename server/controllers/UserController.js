@@ -52,9 +52,9 @@ const SignUp = (req, res) => {
                 email,
                 password: hash,
                 phone,
+                role_id: 1,
               })
                 .then((newUser) => {
-                  console.log("✅ New user saved to DB:", newUser.toJSON()); // <--- add this
                   const token = createToken(newUser.user_id);
                   res.status(200).json({
                     status: 1,
@@ -63,7 +63,6 @@ const SignUp = (req, res) => {
                   });
                 })
                 .catch((err) => {
-                  console.error("❌ Error saving user to DB:", err); // <--- add this
                   res.status(500).json({
                     status: 0,
                     data: err,
@@ -82,50 +81,26 @@ const SignUp = (req, res) => {
   }
 };
 
-const Login = (req, res) => {
-  const password = req.body.password;
-  const email = req.body.email;
+const Login = async (req, res) => {
+  const { email, password } = req.body;
 
-  if (!email || !password) {
-    return res.status(400).json({
-      status: 0,
-      mssg: "Please make sure to fill out all the fields!",
-    });
-  } else {
-    User.findOne({
-      where: {
-        email,
-      },
-    })
-      .then((user) => {
-        if (!user) {
-          return res.status(404).json({
-            status: 0,
-            data: "User not found",
-          });
-        } else {
-          const isPasswordValid = bcrypt.compareSync(password, user.password);
-          if (isPasswordValid === false) {
-            return res.status(401).json({
-              status: 0,
-              data: "The password is incorrect!",
-            });
-          } else {
-            const token = createToken(user.user_id);
-            return res.status(200).json({
-              status: 1,
-              data: user,
-              token,
-            });
-          }
-        }
-      })
-      .catch((err) => {
-        return res.status(500).json({
-          status: 0,
-          data: "An internal server error occurred.",
-        });
-      });
+  try {
+    const user = await User.findOne({ where: { email } });
+
+    if (!user) {
+      return res.status(400).json({ mssg: "User not found" });
+    }
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if (!isMatch) {
+      return res.status(401).json({ mssg: "Incorrect password" });
+    }
+
+    return res.status(200).json({ mssg: "Login successful", user });
+  } catch (error) {
+    console.error("Login Error:", error);
+    return res.status(500).json({ mssg: "Server error during login" });
   }
 };
 

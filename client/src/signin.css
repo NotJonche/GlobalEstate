@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #f9f9f9;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  padding: 20px;
+}
+.SignUpForm {
+  width: 100%;
+  max-width: 400px;
+  margin: 60px auto;
+  padding: 30px;
+  border-radius: 15px;
+  border: 1px solid #e4e2e1;
+  text-align: center;
+}
+
+.registerBtn {
+  background-color: #1cc453;
+  padding: 12px;
+  color: #ffffff;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  font-size: 17px;
+  font-weight: 500;
+  cursor: pointer;
+  font-family: sans-serif;
+}
+
+h2 {
+  text-align: center;
+  font-family: "Roboto";
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+.inputGr {
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.inputGr input {
+  width: 100%;
+  padding: 10px 12px 10px 42px;
+  border: 1px;
+  border-radius: 9px;
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  box-sizing: border-box;
+}
+
+.inputGr input:focus {
+  outline: none;
+  border: #1cc453;
+}
+
+.inputIcon {
+  position: absolute;
+  top: 11px;
+  left: 12px;
+  font-size: 16px;
+  color: #888;
+}
+.name {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.name .inputGr {
+  flex: 1;
+  margin-bottom: 0;
+}
+
+input {
+  padding: 9px;
+  margin-bottom: 20px;
+  border: 1px solid #e4e2e1;
+  border-radius: 4px;
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+input:focus {
+  outline: none;
+  border-color: #1cc453;
+}
+
+.loginLink {
+  text-align: center;
+  margin-top: 14px;
+  font-size: 15px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+.loginLink a {
+  color: #1cc453;
+  text-decoration: none;
+}
+
+.loginLink a:hover {
+  text-decoration: underline;
+}
+.error-message {
+  color: red;
+  margin-top: 10px;
+}

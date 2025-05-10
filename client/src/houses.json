@@ -1,0 +1,122 @@
+[
+  {
+    "id": "1",
+    "title": "Penthouse with City View",
+    "type": "For Sale",
+    "price": "$450,000",
+    "location": "Tirana, Albania",
+    "description":  "This elegant 3-bedroom penthouse is located in the heart of Tirana with a panoramic city view. The open-plan interior is spacious and filled with natural light, offering a modern and comfortable living space. Features include an underground garage, stylish kitchen, and expansive terrace. Ideal for professionals or families looking for upscale urban living.",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "areaSqM": 150,
+    "yearBuilt": 2020,
+    "hasGarage": true,
+    "hasPool": false,
+    "image": "/public/home2.png",
+    "agent": {
+      "name": "Capital Estate",
+      "email": "sales@capitalestate.al",
+      "phone": "0681234567"
+    }
+  },
+  {
+    "id": "2",
+    "title": "Modern Apartment in Downtown",
+    "type": "For Sale",
+    "price": "$250,000",
+    "location": "Tirana, Albania",
+    "description": "This modern 2-bedroom apartment is located in the heart of downtown Tirana, offering both comfort and convenience. It features a spacious open-plan living area, a sleek kitchen, and a large balcony perfect for relaxing or entertaining. Ideal for small families or professionals, this property offers contemporary living close to shops, restaurants, and cultural attractions.",
+    "bedrooms": 2,
+    "bathrooms": 1,
+    "areaSqM": 85, 
+    "yearBuilt": 2018,
+    "hasGarage": false,
+    "hasPool": false,
+    "image": "/public/home6.png",
+    "agent": {
+      "name": "Arlind Property",
+      "email": "contact@arlindproperty.com",
+      "phone": "0699999999"
+    }
+  },
+  {
+    "id": "3",
+    "title": "Luxury Villa with Pool",
+    "type": "For Sale",
+    "price": "$1,200,000",
+    "location": "Vlora, Albania",
+    "description": "This stunning 5-bedroom villa offers breathtaking sea views and high-end finishes throughout. Enjoy a private pool, large garage, and generous outdoor living space ideal for entertaining. Built in 2022, the home blends luxury with comfort in one of Vlora’s most sought-after areas. It’s perfect for those seeking an exclusive coastal lifestyle.",
+    "bedrooms": 5,
+    "bathrooms": 4,
+    "areaSqM": 350,
+    "yearBuilt": 2022,
+    "hasGarage": true,
+    "hasPool": true,
+    "image": "/public/home3.png",
+    "agent": {
+      "name": "Elite Villas",
+      "email": "contact@elitevillas.al",
+      "phone": "0677777777"
+    }
+  },
+  {
+    "id": "4",
+    "title": "Affordable Studio Apartment",
+    "type": "For Rent",
+    "price": "$300/Month",
+    "location": "Shkodër, Albania",
+    "description": "This cozy and affordable studio apartment is ideal for students or single professionals looking for comfort and convenience. Located near the university and city center, it offers easy access to shops, cafes, and public transport. The apartment features a bright open space, a modern kitchenette, and a private bathroom, all fully furnished and move-in ready.",
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "areaSqM": 40,
+    "yearBuilt": 2015,
+    "hasGarage": false,
+    "hasPool": false,
+    "image": "/public/home4.png",
+    "agent": {
+      "name": "Shkodra Rentals",
+      "email": "info@shkodrarentals.al",
+      "phone": "0691111111"
+    }
+  },
+  {
+    "id": "5",
+    "title": "Cozy House with Garden",
+    "type": "For Rent",
+    "price": "$700/Month",
+    "location": "Durrës, Albania",
+    "description":  "A charming 3-bedroom house with a lush private garden, perfect for family life. Located in a quiet neighborhood in Durrës, this rental offers both comfort and space. It includes a large kitchen, two bathrooms, and a secure garage. The home is ideal for long-term tenants seeking peace and convenience near the coast.",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "areaSqM": 120,
+    "yearBuilt": 2010,
+    "hasGarage": true,
+    "hasPool": false,
+    "image": "/public/home1.png",
+    "agent": {
+      "name": "Durrës Homes",
+      "email": "info@durreshomes.al",
+      "phone": "0688888888"
+    }
+  },
+  {
+   "id": "6",
+  "title": "Stylish Apartment in City Center",
+  "type": "For Rent",
+  "price": "€850/Month",
+  "location": "Prishtinë, Kosovo",
+  "description": "This fully furnished 2-bedroom apartment is located in the vibrant center of Prishtina. Its modern design, quality furnishings, and natural light create a warm, inviting living space. Just steps from cafes, shops, and public transport, it offers convenience and style in one. Ideal for professionals or couples seeking a dynamic urban lifestyle.",
+  "bedrooms": 2,
+  "bathrooms": 1,
+  "areaSqM": 95,
+  "yearBuilt": 2018,
+  "hasGarage": false,
+  "hasPool": false,
+  "image":"../public/home5.png",
+  "agent": {
+    "name": "Prishtina Living",
+    "email": "info@prishtinaliving.com",
+    "phone": "044123456"
+    }
+  }
+]
